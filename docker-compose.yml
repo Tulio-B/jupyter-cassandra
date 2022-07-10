@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+  jupyter_lab:
+    container_name: jupyter_cassandra
+    user: root
+    build: .
+    ports: 
+      - "8888:8888"
+    environment: 
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    volumes: 
+      - ./work:/home/jovyan/
